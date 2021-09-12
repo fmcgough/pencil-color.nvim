@@ -122,7 +122,7 @@ local theme = lush(function()
     DiffAdd      { fg = palette.green, bg = palette.green.lighten(80) }, -- diff mode: Added line |diff.txt|
     DiffChange   { fg = palette.dark_orange.darken(20), bg = palette.dark_orange.lighten(80) }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { fg = palette.red, bg = palette.magenta.lighten(80) }, -- diff mode: Deleted line |diff.txt|
-    DiffText     { DiffChange, gui = "bold,underline" }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText     { DiffChange, gui = "bold", bg = DiffChange.bg.darken(15) }, -- diff mode: Changed text within a changed line |diff.txt|
 
     EndOfBuffer  { gui = "bold", fg = palette.light_grey }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursorNC { }, -- cursor in an unfocused terminal
@@ -143,7 +143,7 @@ local theme = lush(function()
     MatchParen   { bg = palette.light_grey.lighten(20) }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = palette.light_green, gui = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea      { }, -- Area for messages and cmdline
-    -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+    MsgSeparator { fg = palette.white, bg = palette.grey, gui = "bold" }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg      { fg = palette.green, gui = "bold" }, -- |more-prompt|
     NonText      { bg = palette.white, fg = palette.light_grey, gui = "bold" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     NormalFloat  { bg = palette.light_grey.lighten(50), fg = Normal.fg }, -- Normal text in floating windows.
@@ -219,7 +219,7 @@ local theme = lush(function()
     Italic     { gui = "italic" },
 
     -- ("Ignore", below, may be invisible...)
-    -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
+    Ignore         { fg = palette.white }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     Error          { fg = palette.bright_red, bg = palette.magenta.lighten(80) }, -- (preferred) any erroneous construct
 
@@ -326,7 +326,7 @@ local theme = lush(function()
 
     -- scala
     scalaKeywordModifier { Keyword },
-    scalaKeywordSpecialFunction { Function, gui = "italic" },
+    scalaKeywordSpecialFunction { Special, gui = "italic" },
     scalaAnnotation      { fg = palette.dark_orange }
   }
 end)

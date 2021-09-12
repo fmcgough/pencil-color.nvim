@@ -323,6 +323,11 @@ local theme = lush(function()
     GitSignsAdd          { fg = palette.green.lighten(10), bg = SignColumn.bg },
     GitSignsChange       { fg = palette.bright_orange.darken(10), bg = SignColumn.bg },
     GitSignsDelete       { fg = palette.magenta, bg = SignColumn.bg },
+
+    -- scala
+    scalaKeywordModifier { Keyword },
+    scalaKeywordSpecialFunction { Function, gui = "italic" },
+    scalaAnnotation      { fg = palette.dark_orange }
   }
 end)
 

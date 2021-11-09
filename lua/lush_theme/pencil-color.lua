@@ -244,9 +244,9 @@ local theme = lush(function()
     -- LspDiagnosticsVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
 
     -- highlighting here doesn't seem to work...
-    -- LspDiagnosticsUnderlineError         { gui = "undercurl", sp = LspDiagnosticsDefaultError.fg }, -- Used to underline "Error" diagnostics
-    -- LspDiagnosticsUnderlineWarning       { gui = "undercurl", sp = LspDiagnosticsDefaultWarning.fg }, -- Used to underline "Warning" diagnostics
-    -- LspDiagnosticsUnderlineInformation   { gui = "undercurl", sp = LspDiagnosticsDefaultInformation.fg }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineError         { gui = "undercurl", sp = LspDiagnosticsDefaultError.fg }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning       { gui = "undercurl", sp = LspDiagnosticsDefaultWarning.fg }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation   { gui = "undercurl", sp = LspDiagnosticsDefaultInformation.fg }, -- Used to underline "Information" diagnostics
     -- LspDiagnosticsUnderlineHint          { gui = "undercurl", sp = LspDiagnosticsDefaultHint.fg }, -- Used to underline "Hint" diagnostics
 
     -- LspDiagnosticsFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
@@ -259,7 +259,7 @@ local theme = lush(function()
     LspDiagnosticsSignInformation        { LspDiagnosticsDefaultInformation, bg = SignColumn.bg }, -- Used for "Information" signs in sign column
     LspDiagnosticsSignHint               { LspDiagnosticsDefaultHint, bg = SignColumn.bg }, -- Used for "Hint" signs in sign column
 
-    -- LspCodeLens                          { }, -- Used to color the virtual text of the codelens
+    LspCodeLens                          { fg = LspDiagnosticsSignHint.fg, gui = "italic" }, -- Used to color the virtual text of the codelens
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.

@@ -273,8 +273,8 @@ local theme = lush(function()
     -- TSCharacter          { };    -- For characters.
     -- TSComment            { };    -- For comment blocks.
     TSConstructor        { fg = palette.purple, gui = "italic" };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    -- TSConditional        { };    -- For keywords related to conditionnals.
-    -- TSConstant           { };    -- For constants
+    TSConditional        { Conditional };    -- For keywords related to conditionnals.
+    TSConstant           { Constant };    -- For constants
     -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro         { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError              { };    -- For syntax/parser errors.
@@ -304,12 +304,12 @@ local theme = lush(function()
     TSStringRegex        { fg = palette.green };    -- For regexes.
     -- TSStringEscape       { };    -- For escape characters within a string.
     -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-    -- TSType               { };    -- For types.
-    -- TSTypeBuiltin        { };    -- For builtin types.
+    TSType               { fg = palette.magenta, gui = "bold" };    -- For types.
+    TSTypeBuiltin        { TSType };    -- For builtin types.
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
     -- TSVariableBuiltin    { };    -- Variable names that are defined by the languages, like `this` or `self`.
 
-    -- TSTag                { };    -- Tags like html tag names.
+    -- TSTag                { fg = palette.purple };    -- Tags like html tag names.
     -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
     -- TSText               { };    -- For strings considered text in a markup language.
     TSEmphasis           { Bold };    -- For text to be represented with emphasis.
@@ -327,7 +327,28 @@ local theme = lush(function()
     -- scala
     scalaKeywordModifier { Keyword },
     scalaKeywordSpecialFunction { Special, gui = "italic" },
-    scalaAnnotation      { fg = palette.dark_orange }
+    scalaAnnotation      { fg = palette.dark_orange },
+
+    -- misc
+    PanelHeading         { LineNr },
+
+    -- nvim-notify
+    NotifyERRORBorder    { LspDiagnosticsDefaultError },
+    NotifyERRORIcon      { LspDiagnosticsDefaultError },
+    NotifyERRORTitle      { LspDiagnosticsDefaultError },
+    NotifyWARNBorder     { LspDiagnosticsDefaultWarning },
+    NotifyWARNIcon       { LspDiagnosticsDefaultWarning },
+    NotifyWARNTitle       { LspDiagnosticsDefaultWarning },
+    NotifyINFOBorder     { fg = palette.green },
+    NotifyINFOIcon       { fg = palette.green },
+    NotifyINFOTitle       { fg = palette.green },
+    NotifyDEBUGBorder    { LspDiagnosticsDefaultInformation },
+    NotifyDEBUGIcon      { LspDiagnosticsDefaultInformation },
+    NotifyDEBUGTitle      { LspDiagnosticsDefaultInformation },
+    NotifyTRACEBorder    { LspDiagnosticsDefaultHint },
+    NotifyTRACEIcon      { LspDiagnosticsDefaultHint },
+    NotifyTRACETitle      { LspDiagnosticsDefaultHint }
+    ;
   }
 end)
 

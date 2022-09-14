@@ -325,12 +325,16 @@ local theme = lush(function()
     GitSignsDelete       { fg = palette.magenta, bg = SignColumn.bg },
 
     -- scala
-    scalaKeywordModifier { Keyword },
+    scalaKeywordModifier        { Keyword },
     scalaKeywordSpecialFunction { Special, gui = "italic" },
-    scalaAnnotation      { fg = palette.dark_orange },
+    scalaAnnotation             { fg = palette.dark_orange },
 
-    -- misc
-    PanelHeading         { LineNr },
+    -- telescope
+    TelescopeSelection      { bg = palette.light_grey.lighten(20) },
+    TelescopeMultiSelection { Title },
+
+    -- File explorer
+    PanelHeading            { bg = hsl("#bdbdbd"), fg = palette.dark_grey, gui = "bold" },
 
     -- nvim-notify
     NotifyERRORBorder    { LspDiagnosticsDefaultError },

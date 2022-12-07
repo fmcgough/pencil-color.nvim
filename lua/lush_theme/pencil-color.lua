@@ -44,7 +44,6 @@
 
 local lush = require("lush")
 local hsl = lush.hsl
-
 local palette = {
 
   white = hsl("#eeeeee"),
@@ -335,6 +334,37 @@ local theme = lush(function()
 
     -- File explorer
     PanelHeading            { bg = hsl("#bdbdbd"), fg = palette.dark_grey, gui = "bold" },
+
+    -- Breadcrumbs
+    NavicText            { bg = Normal.bg.darken(4.0), fg = palette.grey },
+    NavicSeparator       { NavicText },
+    NavicIconsFile     { NavicText },
+    NavicIconsModule     { NavicText },
+    NavicIconsNamespace     { NavicText },
+    NavicIconsPackage     { NavicText, fg = palette.bright_red.lighten(30) },
+    NavicIconsClass     { NavicText, fg = palette.cyan },
+    NavicIconsMethod     { NavicText, fg = palette.bright_pink },
+    NavicIconsProperty     { NavicText, fg = palette.bright_blue.lighten(50) },
+    NavicIconsField     { NavicText, fg = NavicIconsProperty.fg },
+    NavicIconsConstructor     { NavicText },
+    NavicIconsEnum     { NavicText, fg = palette.cyan },
+    NavicIconsInterface     { NavicText, fg = palette.cyan },
+    NavicIconsFunction     { NavicText, fg = palette.purple.lighten(20) },
+    NavicIconsVariable     { NavicText, fg = palette.bright_purple },
+    NavicIconsConstant     { NavicText },
+    NavicIconsString     { NavicText, fg = palette.green },
+    NavicIconsNumber     { NavicText, fg = palette.light_green },
+    NavicIconsBoolean     { NavicText },
+    NavicIconsArray     { NavicText, fg = palette.dark_orange.lighten(40) },
+    NavicIconsObject     { NavicText, fg = palette.bright_pink },
+    NavicIconsKey     { NavicText, fg = palette.purple.lighten(50) },
+    NavicIconsNull     { NavicText },
+    NavicIconsEnumMember     { NavicText },
+    NavicIconsStruct     { NavicText },
+    NavicIconsEvent     { NavicText, fg = palette.bright_red },
+    NavicIconsOperator     { NavicText, fg = palette.bright_orange },
+    NavicIconsTypeParameter     { NavicText, fg = palette.dark_blue.lighten(15) },
+    WinBar { NavicText },
 
     -- nvim-notify
     NotifyERRORBorder    { LspDiagnosticsDefaultError },
